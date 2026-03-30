@@ -1,4 +1,4 @@
-export function ContactSection({ contact, links }) {
+export function ContactSection({ contact }) {
   return (
     <section className="section-shell contact-section" id="contact">
       <div className="contact-layout">

@@ -5,8 +5,6 @@ export function Hero({ identity, links }) {
   return (
     <section className="hero-section section-shell">
       <div className="hero-copy">
-        <div className="hero-status-pill">{identity.status}</div>
-
         <p className="eyebrow">
           {identity.location} / {identity.role}
         </p>

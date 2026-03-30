@@ -3,13 +3,11 @@ export const siteContent = {
     name: "Vaibhav Honakere",
     role: "Software Engineer",
     location: "San Jose, California",
-    status: "Open to software engineering opportunities",
     intro:
-      "Computer Engineering graduate from UC Santa Cruz building AI-aware products, polished interfaces, and dependable full-stack systems.",
+      "I engineer any digital experiences I can think of leveraging cutting-edge technologies, full-stack expertise, cloud native solutions, good devops practices to drive innovation.",
     headline: {
       lead: "Hello, I'm",
-      accent: "Vaibhav",
-      trailing: "Honakere",
+      accent: "Vaibhav Honakere",
     },
   },
   navigation: [
@@ -25,11 +23,7 @@ export const siteContent = {
       {
         label: "GitHub",
         href: "https://github.com/vaibhavhonakere",
-      },
-      {
-        label: "Devpost",
-        href: "https://devpost.com/vaibhavhonakere123",
-      },
+      }
     ],
     pending: [
       "Add exact LinkedIn URL",
@@ -90,6 +84,157 @@ export const siteContent = {
       value: "Can he build, think clearly, and work inside real systems?",
     },
   ],
+  resumeBoard: {
+    tabs: [
+      { id: "experience", label: "Experience" },
+      { id: "education", label: "Education" },
+      { id: "skills", label: "Skills" },
+      { id: "coursework", label: "Relevant Coursework" },
+      { id: "about", label: "About Me" },
+    ],
+    sections: {
+      experience: {
+        title: "My experience",
+        entries: [
+          {
+            period: "Sep 2024 - Present",
+            location: "Mountain View, CA",
+            role: "Software Engineer",
+            org: "Wisk",
+            bullets: [
+              "Full-time software engineering role focused on production systems and product delivery.",
+              "Contributing to real-world engineering work in a high-accountability environment.",
+            ],
+          },
+          {
+            period: "Jun 2024 - Aug 2024",
+            location: "Mountain View, CA",
+            role: "Software Engineer Intern",
+            org: "Wisk",
+            bullets: [
+              "Summer software engineering internship before converting into a full-time role.",
+              "Built hands-on experience shipping software inside an aviation-focused engineering organization.",
+            ],
+          },
+          {
+            period: "Jan 2024 - Mar 2024",
+            location: "Santa Cruz, CA",
+            role: "AI Researcher",
+            org: "UC Santa Cruz",
+            bullets: [
+              "Worked on AI-focused research work at UC Santa Cruz.",
+              "Applied experimentation and technical analysis in an academic research setting.",
+            ],
+          },
+          {
+            period: "Jun 2023 - Sep 2023",
+            location: "Sunnyvale, CA",
+            role: "Software Engineer Intern",
+            org: "Amazon LLC / Alexa Navigation",
+            bullets: [
+              "Used Llama, Falcon40B, and HuggingFace models to support complex Alexa navigation flows.",
+              "Created a custom dataset with 150+ data values to improve semantic understanding of user intent.",
+              "Built Flask endpoints on EC2 and integrated AWS Secrets Manager token authentication.",
+              "Publicly listed result: improved Alexa user experience retention by 15%.",
+            ],
+          },
+          {
+            period: "2022",
+            location: "Remote",
+            role: "Software Engineer Intern",
+            org: "Droisys Inc",
+            bullets: [
+              "Earlier professional software engineering internship experience before Amazon.",
+              "Worked in a team setting and built practical delivery experience in a production-oriented environment.",
+            ],
+          },
+        ],
+      },
+      education: {
+        title: "Education",
+        entries: [
+          {
+            period: "Sep 2020 - Jun 2024",
+            location: "Santa Cruz, CA",
+            role: "B.S. Computer Engineering",
+            org: "University of California, Santa Cruz",
+            bullets: [
+              "Dean's Honors: Fall 2020, Spring 2021, Spring 2023.",
+              "Built a strong base across software systems, engineering fundamentals, and hands-on technical execution.",
+            ],
+          },
+          {
+            period: "Aug 2016 - May 2020",
+            location: "San Ramon, CA",
+            role: "High School Diploma",
+            org: "Dougherty Valley High School",
+            bullets: [
+              "Completed secondary education before starting computer engineering studies at UC Santa Cruz.",
+            ],
+          },
+        ],
+      },
+      skills: {
+        title: "Skills",
+        groups: [
+          {
+            label: "Frontend",
+            items: ["React", "JavaScript", "UI Systems", "Responsive Design"],
+          },
+          {
+            label: "Backend + Cloud",
+            items: ["Python", "Flask", "AWS", "EC2", "Secrets Manager"],
+          },
+          {
+            label: "AI + Tooling",
+            items: ["LLMs", "HuggingFace", "Gemini", "JUnit", "Mockito", "ESP32"],
+          },
+        ],
+      },
+      coursework: {
+        title: "Relevant coursework",
+        groups: [
+          {
+            label: "Core engineering",
+            items: [
+              "Data Structures",
+              "Algorithms",
+              "Computer Architecture",
+              "Operating Systems",
+            ],
+          },
+          {
+            label: "Systems + software",
+            items: [
+              "Software Engineering",
+              "Database Systems",
+              "Computer Networks",
+              "Embedded Systems",
+            ],
+          },
+          {
+            label: "Math + foundations",
+            items: [
+              "Discrete Mathematics",
+              "Linear Algebra",
+              "Probability",
+              "Digital Logic Design",
+            ],
+          },
+        ],
+      },
+      about: {
+        title: "About me",
+        intro:
+          "I'm a UC Santa Cruz Computer Engineering graduate and software engineer who likes building products that are technically sound, useful to real people, and clean in execution. My background spans production engineering, AI-focused work, full-stack systems, and fast-paced internship environments, with a consistent focus on shipping practical software under real constraints.",
+        facts: [
+          { label: "Name", value: "Vaibhav Honakere" },
+          { label: "Hometown", value: "San Jose, CA" },
+          { label: "Industry Experience", value: "2+ years" },
+        ],
+      },
+    },
+  },
   projectsMeta: [
     {
       label: "Range",
@@ -234,7 +379,7 @@ export const siteContent = {
   contact: {
     heading: "Let's work together",
     summary:
-      "Fill this out so we can stay connected and discuss software engineering opportunities, internships, or collaboration.",
+      "Fill this out so we can stay connected and discuss any opportunities",
     channels: [
       {
         icon: "✉",

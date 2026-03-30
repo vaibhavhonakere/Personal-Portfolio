@@ -88,12 +88,11 @@ a {
 .site-header {
   width: var(--container);
   margin: 22px auto 0;
-  padding: 18px 20px;
+  padding: 12px 16px;
   position: sticky;
   top: 16px;
   z-index: 10;
-  display: grid;
-  grid-template-columns: auto 1fr auto;
+  display: flex;
   gap: 18px;
   align-items: center;
   background: rgba(7, 16, 19, 0.74);
@@ -138,16 +137,20 @@ a {
 
 .nav-links {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
+  margin-left: auto;
   flex-wrap: wrap;
   gap: 8px;
 }
 
 .nav-link,
-.status-pill,
 .chip,
 .honor-chip {
-  padding: 10px 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 0 20px;
   border-radius: 999px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   background: rgba(255, 255, 255, 0.04);
@@ -163,12 +166,26 @@ a {
 }
 
 .nav-link.is-active {
-  background: rgba(255, 255, 255, 0.1);
+  color: var(--accent);
+  background: transparent;
+  border-color: transparent;
 }
 
-.status-pill {
-  color: var(--text);
-  background: rgba(150, 229, 207, 0.12);
+.nav-link-cta {
+  min-width: 0;
+  min-height: 52px;
+  margin-left: 14px;
+  padding: 0 24px;
+  color: #071215;
+  background: var(--accent);
+  border-color: transparent;
+}
+
+.nav-link-cta:hover,
+.nav-link-cta.is-active {
+  color: #071215;
+  background: var(--accent);
+  border-color: transparent;
 }
 
 .route-main {
@@ -193,20 +210,6 @@ a {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-}
-
-.hero-status-pill {
-  display: inline-flex;
-  align-items: center;
-  min-height: 58px;
-  margin-bottom: 28px;
-  padding: 0 26px;
-  border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(255, 255, 255, 0.05);
-  box-shadow: inset 0 0 0 1px rgba(150, 229, 207, 0.14);
-  color: var(--text);
-  font-size: clamp(1rem, 2vw, 1.15rem);
 }
 
 .hero-visual {
@@ -365,9 +368,9 @@ a {
 .portrait-shell {
   position: relative;
   display: grid;
-  justify-items: center;
+  place-items: center;
   width: min(100%, 620px);
-  padding: 30px;
+  aspect-ratio: 1 / 1;
 }
 
 .portrait-orbit {
@@ -375,6 +378,7 @@ a {
   inset: 0;
   border-radius: 50%;
   pointer-events: none;
+  z-index: 1;
 }
 
 .portrait-orbit::before,
@@ -394,26 +398,26 @@ a {
 }
 
 .portrait-orbit-one::before {
-  inset: 8% 12%;
+  inset: 1.5%;
   border-left-color: transparent;
   border-bottom-color: transparent;
 }
 
 .portrait-orbit-one::after {
-  inset: 8% 12%;
+  inset: 1.5%;
   border-top-color: transparent;
   border-right-color: transparent;
   transform: rotate(180deg);
 }
 
 .portrait-orbit-two::before {
-  inset: 2% 6%;
+  inset: 7.5%;
   border-right-color: transparent;
   border-bottom-color: transparent;
 }
 
 .portrait-orbit-two::after {
-  inset: 2% 6%;
+  inset: 7.5%;
   border-top-color: transparent;
   border-left-color: transparent;
   transform: rotate(180deg);
@@ -421,8 +425,8 @@ a {
 
 .portrait-frame {
   position: relative;
-  z-index: 1;
-  width: min(100%, 520px);
+  z-index: 2;
+  width: 82%;
   aspect-ratio: 1 / 1;
   overflow: hidden;
   border-radius: 999px;
@@ -538,6 +542,152 @@ a {
   color: rgba(245, 247, 244, 0.88);
 }
 
+.resume-board-section {
+  padding-top: 84px;
+}
+
+.resume-board {
+  display: grid;
+  grid-template-columns: 300px minmax(0, 1fr);
+  gap: 64px;
+  align-items: start;
+}
+
+.resume-sidebar {
+  display: grid;
+  gap: 18px;
+  position: sticky;
+  top: 116px;
+}
+
+.resume-tab {
+  min-height: 72px;
+  padding: 0 28px;
+  border: 0;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text);
+  font: inherit;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+}
+
+.resume-tab.is-active {
+  color: #071215;
+  background: var(--accent);
+}
+
+.resume-content {
+  display: grid;
+  gap: 26px;
+}
+
+.resume-heading-block {
+  display: grid;
+  gap: 12px;
+}
+
+.resume-heading {
+  margin: 0;
+  font-size: clamp(3rem, 6vw, 4.8rem);
+  letter-spacing: -0.04em;
+}
+
+.resume-entry-list,
+.resume-group-list,
+.resume-copy-list {
+  display: grid;
+  gap: 22px;
+}
+
+.resume-entry {
+  padding: 34px;
+  border-radius: 28px;
+}
+
+.resume-entry-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  color: var(--accent);
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.resume-entry h2 {
+  margin: 18px 0 0;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.15;
+}
+
+.resume-entry-org {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin: 18px 0 0;
+  color: rgba(245, 247, 244, 0.72);
+  font-size: 1.05rem;
+}
+
+.resume-entry-org-mark,
+.resume-entry-org-arrow {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.resume-group,
+.resume-copy {
+  padding: 28px;
+}
+
+.resume-copy p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.resume-about {
+  display: grid;
+  gap: 34px;
+  max-width: 760px;
+}
+
+.resume-about-intro {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.1rem;
+  line-height: 1.85;
+}
+
+.resume-fact-list {
+  display: grid;
+  gap: 28px;
+}
+
+.resume-fact-row {
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr);
+  gap: 16px;
+  align-items: baseline;
+}
+
+.resume-fact-label {
+  color: rgba(245, 247, 244, 0.62);
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+}
+
+.resume-fact-value {
+  color: var(--text);
+  font-size: clamp(1.3rem, 2.2vw, 2rem);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
 .section-intro {
   max-width: 720px;
 }
@@ -554,9 +704,10 @@ a {
 .education-layout,
 .contact-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
-  gap: 24px;
+  grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.8fr);
+  gap: 42px;
   margin-top: 34px;
+  align-items: start;
 }
 
 .project-grid,
@@ -649,6 +800,10 @@ a {
   min-height: 100%;
 }
 
+.contact-form {
+  max-width: 100%;
+}
+
 .contact-form h2 {
   margin: 0;
   font-size: clamp(1.9rem, 4vw, 2.8rem);
@@ -702,44 +857,57 @@ a {
 
 .contact-info-stack {
   display: grid;
-  gap: 26px;
+  gap: 18px;
   align-content: start;
-  padding-top: 52px;
+  justify-self: stretch;
+  width: 100%;
+  max-width: 520px;
+  padding-top: 0;
 }
 
 .contact-info {
   display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 20px;
+  grid-template-columns: 72px minmax(0, 1fr);
+  gap: 18px;
   align-items: center;
-  padding: 0;
+  min-height: 112px;
+  padding: 16px 18px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .contact-icon {
-  width: 88px;
-  height: 88px;
+  width: 72px;
+  height: 72px;
   display: grid;
   place-items: center;
-  border-radius: 18px;
+  border-radius: 16px;
   background: rgba(255, 255, 255, 0.05);
   color: var(--accent);
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   font-weight: 700;
 }
 
 .contact-info-label {
-  margin: 0 0 8px;
+  margin: 0 0 6px;
   color: rgba(245, 247, 244, 0.66);
-  font-size: 0.8rem;
+  font-size: 0.76rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
 .contact-info-link {
+  display: inline-block;
   color: var(--text);
-  font-size: clamp(0.98rem, 1.5vw, 1.25rem);
-  line-height: 1.35;
-  word-break: break-word;
+  font-size: clamp(0.96rem, 1.35vw, 1.12rem);
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+.contact-info-link:hover {
+  color: var(--accent);
 }
 
 .site-footer {
@@ -779,6 +947,7 @@ a {
 @media (max-width: 1080px) {
   .hero-section,
   .page-hero,
+  .resume-board,
   .experience-layout,
   .education-layout,
   .contact-layout {
@@ -790,6 +959,10 @@ a {
   .preview-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .resume-sidebar {
+    position: static;
+  }
 }
 
 @media (max-width: 860px) {
@@ -798,17 +971,15 @@ a {
   }
 
   .site-header {
-    grid-template-columns: 1fr;
+    flex-direction: column;
+    align-items: flex-start;
     border-radius: 30px;
     padding: 16px;
   }
 
   .nav-links {
     justify-content: flex-start;
-  }
-
-  .status-pill {
-    width: fit-content;
+    margin-left: 0;
   }
 
   .section-shell {
@@ -836,6 +1007,15 @@ a {
   .home-stats-grid,
   .preview-grid {
     grid-template-columns: 1fr;
+  }
+
+  .resume-entry-meta {
+    flex-direction: column;
+  }
+
+  .resume-fact-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
   }
 
   .site-footer {
