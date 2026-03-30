@@ -175,19 +175,94 @@ export const siteContent = {
         ],
       },
       skills: {
-        title: "Skills",
-        groups: [
+        title: "My skills",
+        intro:
+          "These are the technical skills I've used across full time jobs, internships, research, personal builds, and academic work.",
+        skillGroups: [
           {
-            label: "Frontend",
-            items: ["React", "JavaScript", "UI Systems", "Responsive Design"],
+            label: "Programming Languages",
+            items: [
+              { name: "JavaScript", symbol: "JS" },
+              { name: "Python", symbol: "PY" },
+              { name: "TypeScript", symbol: "TS" },
+              { name: "Java", symbol: "JV" },
+              { name: "C", symbol: "C" },
+              { name: "C++", symbol: "C+" },
+              { name: "SQL", symbol: "SQL" },
+              { name: "Bash", symbol: "$_" },
+            ],
           },
           {
-            label: "Backend + Cloud",
-            items: ["Python", "Flask", "AWS", "EC2", "Secrets Manager"],
+            label: "Cloud Computing Platforms",
+            items: [
+              { name: "AWS", symbol: "AWS" },
+              { name: "EC2", symbol: "EC2" },
+              { name: "SageMaker", symbol: "SM" },
+              { name: "Google Cloud", symbol: "GCP" }
+            ],
           },
           {
-            label: "AI + Tooling",
-            items: ["LLMs", "HuggingFace", "Gemini", "JUnit", "Mockito", "ESP32"],
+            label: "Front-end Web Development",
+            items: [
+              { name: "React", symbol: "R" },
+              { name: "React Native", symbol: "RN" },
+              { name: "HTML5", symbol: "</>" },
+              { name: "CSS3", symbol: "CSS" },
+              { name: "jQuery", symbol: "JQ" },
+              { name: "Responsive UI", symbol: "UI" },
+            ],
+          },
+          {
+            label: "Back-end Web Development",
+            items: [
+              { name: "Node.js", symbol: "ND" },
+              { name: "Flask", symbol: "FL" },
+              { name: "Fast API", symbol: "FA" },
+              { name: "Django", symbol: "DJ" },
+              { name: "PostgreSQL", symbol: "PG" },
+              { name: "MongoDB", symbol: "MG" },
+              { name: "REST APIs", symbol: "API" },
+              { name: "Secrets Manager", symbol: "SEC" },
+            ],
+          },
+          {
+            label: "Data Analysis & Machine Learning",
+            items: [
+              { name: "NumPy", symbol: "NP" },
+              { name: "GPT-4", symbol: "GPT" },
+              { name: "Llama", symbol: "LLM" },
+              { name: "Falcon 40B", symbol: "F40" },
+              { name: "Hugging Face", symbol: "HF" },
+              { name: "Prompt Engineering", symbol: "PE" },
+              { name: "Vector Databases", symbol: "VDB" },
+            ],
+          },
+          {
+            label: "DevOps & Containerization",
+            items: [
+              { name: "Docker", symbol: "DK" },
+              { name: "Kubernetes", symbol: "K8" },
+              { name: "Linux", symbol: "LX" },
+              { name: "Terraform", symbol: "TF" },
+              { name: "Pulumi", symbol: "PL" },
+            ],
+          },
+          {
+            label: "Version Control",
+            items: [
+              { name: "Git", symbol: "GIT" },
+              { name: "GitLab", symbol: "GL" },
+            ],
+          },
+          {
+            label: "Scripting & Automation",
+            items: [
+              { name: "VS Code", symbol: "VS" },
+              { name: "JUnit", symbol: "JT" },
+              { name: "Mockito", symbol: "MK" },
+              { name: "ESP32", symbol: "32" },
+              { name: "Automation Workflows", symbol: "AUTO" },
+            ],
           },
         ],
       },

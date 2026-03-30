@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { SkillShowcase } from "./SkillShowcase";
 
 export function ResumeBoard({ resumeBoard }) {
   const [activeTab, setActiveTab] = useState(resumeBoard.tabs[0].id);
@@ -75,6 +76,14 @@ export function ResumeBoard({ resumeBoard }) {
                 </article>
               ))}
             </div>
+          ) : null}
+
+          {activeSection.skillGroups ? (
+            <SkillShowcase
+              title={activeSection.title}
+              intro={activeSection.intro}
+              skillGroups={activeSection.skillGroups}
+            />
           ) : null}
 
           {activeSection.paragraphs ? (
