@@ -1,24 +1,31 @@
-export function Hero({ identity, links, highlights }) {
+import { Link } from "react-router-dom";
+import headshot from "../assets/vaibhav-headshot-optimized.jpg";
+
+export function Hero({ identity, links }) {
   return (
-    <section className="hero-section section-shell" id="top">
+    <section className="hero-section section-shell">
       <div className="hero-copy">
+        <div className="hero-status-pill">{identity.status}</div>
+
         <p className="eyebrow">
           {identity.location} / {identity.role}
         </p>
 
         <h1 className="hero-title">
-          {identity.headline.lead} <span>{identity.headline.accent}</span>
+          <span className="hero-title-lead">{identity.headline.lead}</span>
+          <span className="hero-title-accent">{identity.headline.accent}</span>
+          <span className="hero-title-trailing">{identity.headline.trailing}</span>
         </h1>
 
         <p className="hero-summary">{identity.intro}</p>
 
         <div className="hero-actions">
-          <a className="button button-primary" href={links.primary.href}>
+          <Link className="button button-primary" to={links.primary.href}>
             {links.primary.label}
-          </a>
-          <a className="button button-secondary" href={links.secondary.href}>
+          </Link>
+          <Link className="button button-secondary" to={links.secondary.href}>
             {links.secondary.label}
-          </a>
+          </Link>
         </div>
 
         <div className="social-links">
@@ -36,18 +43,18 @@ export function Hero({ identity, links, highlights }) {
         </div>
       </div>
 
-      <aside className="hero-panel">
-        <p className="panel-kicker">Recruiter Snapshot</p>
-        <h2>{identity.recruiterNote}</h2>
+      <aside className="hero-visual">
+        <div className="portrait-shell">
+          <div className="portrait-orbit portrait-orbit-one" aria-hidden="true" />
+          <div className="portrait-orbit portrait-orbit-two" aria-hidden="true" />
 
-        <div className="highlight-grid">
-          {highlights.map((item) => (
-            <article key={item.label} className="highlight-card">
-              <strong>{item.value}</strong>
-              <h3>{item.label}</h3>
-              <p>{item.text}</p>
-            </article>
-          ))}
+          <div className="portrait-frame">
+            <img
+              className="portrait-image"
+              src={headshot}
+              alt="Vaibhav Honakere portrait"
+            />
+          </div>
         </div>
       </aside>
     </section>

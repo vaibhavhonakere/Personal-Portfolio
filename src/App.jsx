@@ -1,13 +1,12 @@
 import { useEffect } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
-import { Hero } from "./components/Hero";
-import { Marquee } from "./components/Marquee";
-import { ExperienceSection } from "./components/ExperienceSection";
-import { ProjectsSection } from "./components/ProjectsSection";
-import { StrengthsSection } from "./components/StrengthsSection";
-import { EducationSection } from "./components/EducationSection";
-import { ContactSection } from "./components/ContactSection";
 import { siteContent } from "./data/siteContent";
+import { ContactPage } from "./pages/ContactPage";
+import { HomePage } from "./pages/HomePage";
+import { ProjectsPage } from "./pages/ProjectsPage";
+import { ResumePage } from "./pages/ResumePage";
 
 function App() {
   useEffect(() => {
@@ -24,29 +23,25 @@ function App() {
   }, []);
 
   return (
-    <div className="app-shell">
-      <div className="ambient ambient-one" aria-hidden="true" />
-      <div className="ambient ambient-two" aria-hidden="true" />
+    <BrowserRouter>
+      <div className="app-shell">
+        <div className="ambient ambient-one" aria-hidden="true" />
+        <div className="ambient ambient-two" aria-hidden="true" />
 
-      <Header identity={siteContent.identity} navigation={siteContent.navigation} />
+        <Header identity={siteContent.identity} navigation={siteContent.navigation} />
 
-      <main>
-        <Hero
-          identity={siteContent.identity}
-          links={siteContent.links}
-          highlights={siteContent.highlights}
-        />
-        <Marquee items={siteContent.marquee} />
-        <ExperienceSection
-          featuredRole={siteContent.featuredRole}
-          trajectory={siteContent.trajectory}
-        />
-        <ProjectsSection projects={siteContent.projects} />
-        <StrengthsSection strengths={siteContent.strengths} />
-        <EducationSection education={siteContent.education} />
-        <ContactSection contact={siteContent.contact} links={siteContent.links} />
-      </main>
-    </div>
+        <main className="route-main">
+          <Routes>
+            <Route path="/" element={<HomePage siteContent={siteContent} />} />
+            <Route path="/resume" element={<ResumePage siteContent={siteContent} />} />
+            <Route path="/projects" element={<ProjectsPage siteContent={siteContent} />} />
+            <Route path="/contact" element={<ContactPage siteContent={siteContent} />} />
+          </Routes>
+        </main>
+
+        <Footer identity={siteContent.identity} />
+      </div>
+    </BrowserRouter>
   );
 }
 

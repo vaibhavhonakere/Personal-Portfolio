@@ -2,27 +2,25 @@ export const siteContent = {
   identity: {
     name: "Vaibhav Honakere",
     role: "Software Engineer",
-    location: "Tracy, California",
+    location: "San Jose, California",
     status: "Open to software engineering opportunities",
     intro:
-      "Computer Engineering graduate from UC Santa Cruz building AI-aware products, polished interfaces, and full-stack systems that stay usable under real constraints.",
+      "Computer Engineering graduate from UC Santa Cruz building AI-aware products, polished interfaces, and dependable full-stack systems.",
     headline: {
-      lead: "Software with",
-      accent: "signal",
+      lead: "Hello, I'm",
+      accent: "Vaibhav",
+      trailing: "Honakere",
     },
-    recruiterNote:
-      "Publicly indexed work shows a mix of product sense, LLM experimentation, backend integration, and fast execution across internships and hackathon builds.",
   },
   navigation: [
-    { label: "Experience", href: "#experience" },
-    { label: "Projects", href: "#projects" },
-    { label: "Strengths", href: "#strengths" },
-    { label: "Education", href: "#education" },
-    { label: "Contact", href: "#contact" },
+    { label: "Home", href: "/" },
+    { label: "Resume", href: "/resume" },
+    { label: "Projects", href: "/projects" },
+    { label: "Contact Me", href: "/contact" },
   ],
   links: {
-    primary: { label: "View Experience", href: "#experience" },
-    secondary: { label: "See Projects", href: "#projects" },
+    primary: { label: "Open Resume", href: "/resume" },
+    secondary: { label: "See Projects", href: "/projects" },
     socials: [
       {
         label: "GitHub",
@@ -56,15 +54,69 @@ export const siteContent = {
       text: "Public UCSC honors pages list Vaibhav Honakere in Fall 2020, Spring 2021, and Spring 2023.",
     },
   ],
-  marquee: [
-    "LLM workflows",
-    "React interfaces",
-    "Flask services",
-    "AWS deployment",
-    "Hackathon shipping",
-    "Product thinking",
-    "System integration",
-    "Full-stack ownership",
+  homeMetrics: [
+    {
+      value: "4",
+      label: "Years building software",
+    },
+    {
+      value: "2",
+      label: "Industry internships",
+    },
+    {
+      value: "2+",
+      label: "Public projects shipped",
+    },
+    {
+      value: "8+",
+      label: "Technologies applied",
+    },
+    {
+      value: "3x",
+      label: "Dean's Honors",
+    },
+  ],
+  resumeMeta: [
+    {
+      label: "Strongest signal",
+      value: "Amazon Alexa internship with LLM-backed workflow and public retention impact.",
+    },
+    {
+      label: "Background",
+      value: "UC Santa Cruz Computer Engineering with repeat Dean's Honors entries.",
+    },
+    {
+      label: "What this page answers",
+      value: "Can he build, think clearly, and work inside real systems?",
+    },
+  ],
+  projectsMeta: [
+    {
+      label: "Range",
+      value: "AI recipe generation, sensor systems, messaging integrations, and React interfaces.",
+    },
+    {
+      label: "Pattern",
+      value: "Projects pair product framing with fast execution instead of isolated code demos.",
+    },
+    {
+      label: "What this page answers",
+      value: "What does his work look like when he builds end to end?",
+    },
+  ],
+  contactMeta: [
+    {
+      label: "Best for",
+      value: "Recruiter outreach, software opportunities, and product-focused roles.",
+    },
+    {
+      label: "Still to add",
+      value: "Exact recruiter email, LinkedIn profile, and optional calendar link.",
+    },
+    {
+      label: "Goal",
+      value: "Reduce the gap between interest and outreach.",
+    },
   ],
   featuredRole: {
     company: "Amazon LLC",
@@ -180,8 +232,28 @@ export const siteContent = {
     ],
   },
   contact: {
-    heading: "The portfolio now has the shape. One last pass makes it recruiter-ready.",
+    heading: "Let's work together",
     summary:
-      "The public profile details are built in. Before deploying, add Vaibhav's exact LinkedIn URL, a direct resume link, and a recruiter email so the site converts cleanly.",
+      "Fill this out so we can stay connected and discuss software engineering opportunities, internships, or collaboration.",
+    channels: [
+      {
+        icon: "✉",
+        label: "Personal Email",
+        value: "vaibhavhonakere123@gmail.com",
+        href: "mailto:vaibhavhonakere123@gmail.com",
+      },
+      {
+        icon: "in",
+        label: "LinkedIn",
+        value: "linkedin.com/in/vaibhav-honakere-1ba32918a",
+        href: "https://www.linkedin.com/in/vaibhav-honakere-1ba32918a/",
+      },
+      {
+        icon: "</>",
+        label: "GitHub",
+        value: "github.com/vaibhavhonakere",
+        href: "https://github.com/vaibhavhonakere",
+      },
+    ],
   },
 };

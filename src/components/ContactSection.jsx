@@ -1,47 +1,48 @@
-import { SectionIntro } from "./SectionIntro";
-
 export function ContactSection({ contact, links }) {
   return (
     <section className="section-shell contact-section" id="contact">
-      <SectionIntro
-        label="Contact"
-        title={contact.heading}
-        description={contact.summary}
-      />
-
       <div className="contact-layout">
-        <div className="contact-actions card">
-          <div className="card-topline">
-            <span>Public Links</span>
-            <span>Ready now</span>
+        <form className="contact-form card">
+          <h2>{contact.heading}</h2>
+          <p className="contact-copy">{contact.summary}</p>
+
+          <div className="contact-form-grid">
+            <input className="contact-input" type="text" placeholder="First Name" />
+            <input className="contact-input" type="text" placeholder="Last Name" />
+            <input className="contact-input" type="email" placeholder="Email Address" />
+            <input className="contact-input" type="tel" placeholder="Phone Number" />
           </div>
 
-          <div className="link-stack">
-            {links.socials.map((item) => (
-              <a
-                key={item.href}
-                className="contact-link"
-                href={item.href}
-                target="_blank"
-                rel="noreferrer"
-              >
-                {item.label}
-              </a>
-            ))}
-          </div>
-        </div>
+          <textarea
+            className="contact-input contact-textarea"
+            rows="7"
+            placeholder="Type your message here"
+          />
 
-        <div className="contact-actions card">
-          <div className="card-topline">
-            <span>Before Deploying</span>
-            <span>Finish these</span>
-          </div>
+          <button className="button button-primary contact-submit" type="submit">
+            Send Message
+          </button>
+        </form>
 
-          <ul className="detail-list">
-            {links.pending.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
+        <div className="contact-info-stack">
+          {contact.channels.map((item) => (
+            <article key={item.label} className="contact-info">
+              <div className="contact-icon" aria-hidden="true">
+                {item.icon}
+              </div>
+              <div>
+                <p className="contact-info-label">{item.label}</p>
+                <a
+                  className="contact-info-link"
+                  href={item.href}
+                  target={item.href.startsWith("http") ? "_blank" : undefined}
+                  rel={item.href.startsWith("http") ? "noreferrer" : undefined}
+                >
+                  {item.value}
+                </a>
+              </div>
+            </article>
+          ))}
         </div>
       </div>
     </section>
