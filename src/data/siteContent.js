@@ -378,15 +378,59 @@ export const siteContent = {
   ],
   projects: [
     {
-      name: "Chef it Up!",
-      event: "LA Hacks 2024",
-      summary:
-        "An app that analyzes pantry or fridge images and generates custom recipes while reducing food waste.",
-      details: [
-        "Used image recognition with Gemini and a recipe workflow to suggest meals from available ingredients.",
-        "Focused on ingredient substitution logic, prompt engineering, and a clean React-based user flow.",
+      name: "ClipQuest",
+      icon: "◉",
+      association: "Personal Project",
+      summary: "Video moment search engine for jumping directly to the right second inside long-form content.",
+      description:
+        "ClipQuest is designed as a retrieval-first video product where users can search for a phrase, topic, or moment and land directly on the relevant section instead of manually scrubbing through an entire file. The project is centered on timestamp precision, useful indexing, and a smoother viewing flow that makes large video libraries feel searchable and structured.",
+      tech: ["React.js", "TypeScript", "Python", "FastAPI", "PostgreSQL", "FFmpeg"],
+      links: [
+        {
+          label: "GitHub Repo",
+          href: "https://github.com/vaibhavhonakere/ClipQuest",
+        },
       ],
-      tech: ["React", "Gemini", "JavaScript", "Prompt Engineering"],
+    },
+    {
+      name: "Mini Edge Network",
+      icon: "◌",
+      association: "Distributed Systems Simulation",
+      summary: "Distributed systems simulation focused on node coordination, replication behavior, and failure handling.",
+      description:
+        "Mini Edge Network is a systems-heavy build oriented around simulating how lightweight edge nodes communicate, replicate state, and recover under imperfect conditions. The value of the project is in the architecture itself: modeling service-to-service behavior, observing failure cases, and creating a contained environment for testing distributed systems ideas without needing a full production deployment.",
+      tech: ["Go", "Docker", "Redis", "gRPC", "Linux", "Distributed Systems"],
+      links: [
+        {
+          label: "GitHub Repo",
+          href: "https://github.com/vaibhavhonakere/Mini-Edge-Network",
+        },
+      ],
+    },
+    {
+      name: "Shutterfly",
+      icon: "▣",
+      association: "Automation / CLI Tool",
+      summary: "CLI automation tool for processing Shutterfly sports portrait print orders from CSV files and local photo folders.",
+      description:
+        "Shutterfly is a Node.js automation project built to streamline sports portrait ordering by reading structured CSV order sheets, matching them against local photo folders, running a preflight file check, and then automating the upload and print-selection workflow through Shutterfly. It is a practical operations-focused tool that turns a repetitive manual ordering process into a reproducible CLI workflow.",
+      tech: ["Node.js", "JavaScript", "Puppeteer", "CLI Tooling", "CSV Processing", "Automation"],
+      links: [
+        {
+          label: "GitHub Repo",
+          href: "https://github.com/vaibhavhonakere/Shutterfly",
+        },
+      ],
+    },
+    {
+      name: "Chef It Up",
+      icon: "✦",
+      association: "LA Hacks 2024",
+      summary:
+        "Ingredient-based recipe generator that turns pantry or fridge inputs into usable meal ideas.",
+      description:
+        "Chef It Up was built around a very practical product problem: people know what ingredients they have, but they do not know what they can actually make with them. The app uses ingredient input and image-based flows to generate recipes, suggest substitutions, and reduce wasted groceries while keeping the experience fast enough to feel useful during real meal planning.",
+      tech: ["React.js", "JavaScript", "Google Gemini API", "HTML/CSS", "Prompt Engineering"],
       links: [
         {
           label: "Devpost",
@@ -400,18 +444,40 @@ export const siteContent = {
     },
     {
       name: "BloomBot",
-      event: "HackDavis 2024",
+      icon: "✿",
+      association: "HackDavis 2024",
       summary:
         "A smart plant-care device that combines sensors, cloud processing, and Telegram updates for real-time plant health monitoring.",
-      details: [
-        "Integrated sensors for humidity, moisture, light, and temperature with an AWS-backed processing flow.",
-        "Combined React, Python, ESP32 hardware, and messaging delivery to make environmental insights actionable.",
-      ],
-      tech: ["React", "Python", "ESP32", "AWS", "Flask", "Telegram"],
+      description:
+        "BloomBot combines hardware, cloud processing, and messaging into a single plant-monitoring workflow. The system reads environmental signals like moisture, humidity, light, and temperature, processes the data through a backend pipeline, and sends useful updates through Telegram so plant health becomes something users can actually act on instead of something they just passively measure.",
+      tech: ["React.js", "Python", "Flask", "AWS", "ESP32", "Telegram Bot API"],
       links: [
         {
+          label: "GitHub Repo",
+          href: "https://github.com/BatuhanSA/BloomBot",
+        },
+        {
           label: "Devpost",
-          href: "https://devpost.com/software/bloombot-w4xboy",
+          href: "https://devpost.com/software/bloombot-w4xboy?ref_content=my-projects-tab&ref_feature=my_projects",
+        },
+      ],
+    },
+    {
+      name: "GroupGrub",
+      icon: "◎",
+      association: "Personal Product Concept",
+      summary: "Group dining coordination app for helping friends decide where to eat with less back-and-forth.",
+      description:
+        "GroupGrub is a product concept focused on reducing the friction of choosing food with multiple people. The idea is to combine preferences, filters, location context, and lightweight voting into one decision flow so groups can land on a restaurant faster instead of getting stuck in long message threads. It is positioned as a consumer-facing app with clear room for stronger backend and recommendation logic.",
+      tech: ["React.js", "Node.js", "Express.js", "PostgreSQL", "Google Maps API"],
+      links: [
+        {
+          label: "GitHub Repo",
+          href: "https://github.com/sarthak815/GroupGrub",
+        },
+        {
+          label: "Devpost",
+          href: "https://devpost.com/software/groupgrub",
         },
       ],
     },
