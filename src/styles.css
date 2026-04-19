@@ -198,12 +198,21 @@ a {
   padding: 110px 0;
 }
 
+.home-page {
+  min-height: calc(100svh - 154px);
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 22px;
+  padding-top: 48px;
+  padding-bottom: 26px;
+}
+
 .hero-section {
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
   gap: 30px;
   align-items: center;
-  padding-top: 88px;
 }
 
 .hero-copy {
@@ -236,7 +245,7 @@ a {
 
 .hero-title {
   max-width: 9ch;
-  font-size: clamp(4rem, 10vw, 8rem);
+  font-size: clamp(3.4rem, 8.5vw, 6.6rem);
   display: grid;
   gap: 0.04em;
 }
@@ -293,9 +302,9 @@ a {
 }
 
 .hero-summary {
-  max-width: 34ch;
-  margin: 26px 0 0;
-  line-height: 1.8;
+  max-width: 32ch;
+  margin: 22px 0 0;
+  line-height: 1.7;
 }
 
 .hero-actions,
@@ -309,11 +318,11 @@ a {
 }
 
 .hero-actions {
-  margin-top: 34px;
+  margin-top: 28px;
 }
 
 .social-links {
-  margin-top: 18px;
+  margin-top: 14px;
 }
 
 .button,
@@ -369,7 +378,7 @@ a {
   position: relative;
   display: grid;
   place-items: center;
-  width: min(100%, 620px);
+  width: min(100%, 540px);
   aspect-ratio: 1 / 1;
 }
 
@@ -515,13 +524,13 @@ a {
 }
 
 .home-stats {
-  padding-top: 20px;
+  padding-top: 0;
 }
 
 .home-stats-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 24px;
+  gap: 20px;
 }
 
 .home-stat {
@@ -532,7 +541,7 @@ a {
 
 .home-stat strong {
   display: block;
-  font-size: clamp(2rem, 4vw, 3.3rem);
+  font-size: clamp(1.9rem, 3.7vw, 3rem);
   line-height: 1;
 }
 
@@ -989,6 +998,11 @@ a {
   font-weight: 700;
 }
 
+.project-badge svg {
+  width: 1.4rem;
+  height: 1.4rem;
+}
+
 .project-trigger-copy {
   display: grid;
   gap: 8px;
@@ -1266,6 +1280,13 @@ a {
 }
 
 @media (max-width: 1080px) {
+  .home-page {
+    min-height: auto;
+    gap: 40px;
+    padding-top: 56px;
+    padding-bottom: 72px;
+  }
+
   .hero-section,
   .page-hero,
   .resume-board,
@@ -1311,8 +1332,18 @@ a {
     padding: 84px 0;
   }
 
+  .home-page {
+    gap: 32px;
+    padding-top: 40px;
+    padding-bottom: 56px;
+  }
+
   .hero-section {
     padding-top: 54px;
+  }
+
+  .home-page .hero-section {
+    padding-top: 0;
   }
 
   .hero-title {

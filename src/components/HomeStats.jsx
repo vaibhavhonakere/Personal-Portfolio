@@ -101,7 +101,7 @@ export function HomeStats({ highlights }) {
   }, []);
 
   return (
-    <section ref={sectionRef} className="home-stats section-shell" aria-label="Key highlights">
+    <section ref={sectionRef} className="home-stats" aria-label="Key highlights">
       <div className="home-stats-grid">
         {highlights.map((item) => (
           <article key={item.label} className="home-stat">

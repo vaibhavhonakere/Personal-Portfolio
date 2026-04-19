@@ -18,12 +18,12 @@ export function HomePage({ siteContent }) {
   );
 
   return (
-    <>
+    <section className="home-page section-shell">
       <Hero
         identity={siteContent.identity}
         links={siteContent.links}
       />
       <HomeStats highlights={homeMetrics} />
-    </>
+    </section>
   );
 }

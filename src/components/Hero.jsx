@@ -3,7 +3,7 @@ import headshot from "../assets/vaibhav-headshot-optimized.jpg";
 
 export function Hero({ identity, links }) {
   return (
-    <section className="hero-section section-shell">
+    <section className="hero-section">
       <div className="hero-copy">
         <p className="eyebrow">
           {identity.location} / {identity.role}
