@@ -3,7 +3,16 @@ import { SkillShowcase } from "./SkillShowcase";
 
 export function ResumeBoard({ resumeBoard }) {
   const [activeTab, setActiveTab] = useState(resumeBoard.tabs[0].id);
+  const [openEntryByTab, setOpenEntryByTab] = useState({});
   const activeSection = resumeBoard.sections[activeTab];
+  const activeEntry = openEntryByTab[activeTab] ?? -1;
+
+  function toggleEntry(index) {
+    setOpenEntryByTab((current) => ({
+      ...current,
+      [activeTab]: current[activeTab] === index ? -1 : index,
+    }));
+  }
 
   return (
     <section className="section-shell resume-board-section">
@@ -23,39 +32,70 @@ export function ResumeBoard({ resumeBoard }) {
 
         <div className="resume-content">
           <div className="resume-heading-block">
-            <p className="card-topline">
-              <span>{activeTab}</span>
-            </p>
             <h1 className="resume-heading">{activeSection.title}</h1>
           </div>
 
           {activeSection.entries ? (
             <div className="resume-entry-list">
-              {activeSection.entries.map((entry) => (
-                <article key={`${entry.role}-${entry.period}`} className="resume-entry card">
-                  <div className="resume-entry-meta">
-                    <span>{entry.period}</span>
-                    <span>{entry.location}</span>
-                  </div>
-                  <h2>{entry.role}</h2>
-                  <p className="resume-entry-org">
-                    <span className="resume-entry-org-mark" aria-hidden="true">
-                      •
-                    </span>
-                    <span>{entry.org}</span>
-                    <span className="resume-entry-org-arrow" aria-hidden="true">
-                      ↗
-                    </span>
-                  </p>
-                  {entry.bullets?.length ? (
-                    <ul className="detail-list">
-                      {entry.bullets.map((bullet) => (
-                        <li key={bullet}>{bullet}</li>
-                      ))}
-                    </ul>
-                  ) : null}
-                </article>
-              ))}
+              {activeSection.entries.map((entry, index) => {
+                const isOpen = activeEntry === index;
+
+                return (
+                  <article
+                    key={`${entry.role}-${entry.period}`}
+                    className={`resume-entry card${isOpen ? " is-open" : ""}`}
+                  >
+                    <button
+                      className="resume-entry-trigger"
+                      type="button"
+                      aria-expanded={isOpen}
+                      aria-controls={`resume-entry-panel-${activeTab}-${index}`}
+                      onClick={() => toggleEntry(index)}
+                    >
+                      <div className="resume-entry-meta">
+                        <span>{entry.period}</span>
+                        <span>{entry.location}</span>
+                      </div>
+
+                      <div className="resume-entry-header-row">
+                        <div className="resume-entry-heading">
+                          <h2>{entry.role}</h2>
+                          <p className="resume-entry-org">
+                            <span className="resume-entry-org-mark" aria-hidden="true">
+                              •
+                            </span>
+                            <span>{entry.org}</span>
+                            <span className="resume-entry-org-arrow" aria-hidden="true">
+                              ↗
+                            </span>
+                          </p>
+                        </div>
+
+                        <span className="resume-entry-toggle" aria-hidden="true">
+                          {isOpen ? "−" : "+"}
+                        </span>
+                      </div>
+                    </button>
+
+                    <div
+                      id={`resume-entry-panel-${activeTab}-${index}`}
+                      className={`resume-entry-panel${isOpen ? " is-open" : ""}`}
+                    >
+                      <div className="resume-entry-panel-inner">
+                        {entry.bullets?.length ? (
+                          <div className="resume-entry-detail">
+                            <ul className="detail-list">
+                              {entry.bullets.map((bullet) => (
+                                <li key={bullet}>{bullet}</li>
+                              ))}
+                            </ul>
+                          </div>
+                        ) : null}
+                      </div>
+                    </div>
+                  </article>
+                );
+              })}
             </div>
           ) : null}
 
@@ -80,7 +120,6 @@ export function ResumeBoard({ resumeBoard }) {
 
           {activeSection.skillGroups ? (
             <SkillShowcase
-              title={activeSection.title}
               intro={activeSection.intro}
               skillGroups={activeSection.skillGroups}
             />

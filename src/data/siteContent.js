@@ -50,25 +50,21 @@ export const siteContent = {
   ],
   homeMetrics: [
     {
-      value: "4",
+      value: "5+",
       label: "Years building software",
     },
     {
-      value: "2",
+      value: "2+",
       label: "Industry internships",
     },
     {
-      value: "2+",
+      value: "6+",
       label: "Public projects shipped",
     },
     {
       value: "8+",
       label: "Technologies applied",
-    },
-    {
-      value: "3x",
-      label: "Dean's Honors",
-    },
+    }
   ],
   resumeMeta: [
     {
@@ -94,7 +90,7 @@ export const siteContent = {
     ],
     sections: {
       experience: {
-        title: "My experience",
+        title: "Experience",
         entries: [
           {
             period: "Sep 2024 - Present",
@@ -102,8 +98,13 @@ export const siteContent = {
             role: "Software Engineer",
             org: "Wisk",
             bullets: [
-              "Full-time software engineering role focused on production systems and product delivery.",
-              "Contributing to real-world engineering work in a high-accountability environment.",
+              "Built modular TypeScript extensions for an internal analytics platform, adding cloud file versioning, notebook templating, and metadata-driven content generation for engineering workflows.",
+              "Expanded observability across simulation and platform services with Prometheus, OpenTelemetry, Grafana, and OpenSearch so engineers can inspect cluster health, logs, and runtime behavior in one place.",
+              "Built and deployed cloud-native platform services on Google Cloud using FastAPI, Kubernetes, Terraform, Helm, and containerized workloads to support internal simulation analysis and engineering workflows at scale.",
+              "Deployed internal services on Cloud Run and built authorization workflows for internal applications using Secret Manager and RBAC controls to enforce secure, scoped access across development, staging, and production.",
+              "Cut a legacy processing cycle from four days to under twenty-four hours by redesigning workloads as horizontally scalable Kubernetes jobs and automating idle-resource shutdown behavior.",
+              "Built out GitOps-style delivery using GitLab CI, Argo CD, and Argo Workflows on cost-optimized clusters serving 100+ users, and added Go-based workflow extensions to tighten credential handling and per-user access control.",
+              "Currently contributing to C++ pipeline work around the public IRIG library, decoding aircraft flight-test channels and records into human-readable CSV output for downstream analysis and internal tooling.",
             ],
           },
           {
@@ -112,8 +113,10 @@ export const siteContent = {
             role: "Software Engineer Intern",
             org: "Wisk",
             bullets: [
-              "Summer software engineering internship before converting into a full-time role.",
-              "Built hands-on experience shipping software inside an aviation-focused engineering organization.",
+              "Designed and brought up a GKE-based cluster environment for an internal data-analysis tool, including secure VPN-connected access patterns for engineers working with protected systems.",
+              "Built higher-level libraries and developer utilities that simplified analysis workflows and plugged into GitLab pipelines to automate testing and reduce repetitive setup work.",
+              "Developed Google Vertex AI powered plugins for internal tooling, helping automate code-generation tasks and speed up engineering iteration.",
+              "Created Terraform modules and Helm charts that simplified BigQuery and Google Cloud Storage permission setup, making cloud integration more repeatable across services.",
             ],
           },
           {
@@ -122,8 +125,10 @@ export const siteContent = {
             role: "AI Researcher",
             org: "UC Santa Cruz",
             bullets: [
-              "Worked on AI-focused research work at UC Santa Cruz.",
-              "Applied experimentation and technical analysis in an academic research setting.",
+              "Contributed to AI Explainability and Accountability Lab research focused on explainable AI, anomaly detection, and monitoring methods for autonomous vehicle systems.",
+              "Supported supervised learning workflows for autonomy-related perception tasks using labeled training and evaluation data.",
+              "Assisted with unsupervised learning analysis to compare patterns, anomalies, and model behavior across different driving scenarios.",
+              "Helped organize and prepare datasets for CNN and neural network experiments tied to autonomous systems research.",
             ],
           },
           {
@@ -175,7 +180,7 @@ export const siteContent = {
         ],
       },
       skills: {
-        title: "My skills",
+        title: "Skills",
         intro:
           "These are the technical skills I've used across full time jobs, internships, research, personal builds, and academic work.",
         skillGroups: [
@@ -186,6 +191,7 @@ export const siteContent = {
               { name: "Python", symbol: "PY" },
               { name: "TypeScript", symbol: "TS" },
               { name: "Java", symbol: "JV" },
+              { name: "Go", symbol: "GO" },
               { name: "C", symbol: "C" },
               { name: "C++", symbol: "C+" },
               { name: "SQL", symbol: "SQL" },
@@ -229,7 +235,7 @@ export const siteContent = {
             label: "Data Analysis & Machine Learning",
             items: [
               { name: "NumPy", symbol: "NP" },
-              { name: "GPT-4", symbol: "GPT" },
+              { name: "GPT", symbol: "GPT" },
               { name: "Llama", symbol: "LLM" },
               { name: "Falcon 40B", symbol: "F40" },
               { name: "Hugging Face", symbol: "HF" },
@@ -267,39 +273,58 @@ export const siteContent = {
         ],
       },
       coursework: {
-        title: "Relevant coursework",
+        title: "Relevant Coursework",
         groups: [
           {
-            label: "Core engineering",
+            label: "Computer Science",
             items: [
-              "Data Structures",
-              "Algorithms",
+              "Object-Oriented Programming",
+              "Programming in C",
+              "Information Systems",
+              "Data Structures & Algorithms",
               "Computer Architecture",
-              "Operating Systems",
+              "Analysis of Algorithms",
             ],
           },
           {
-            label: "Systems + software",
+            label: "Systems + AI",
             items: [
-              "Software Engineering",
-              "Database Systems",
-              "Computer Networks",
-              "Embedded Systems",
+              "Systems / Multi-threaded Programming",
+              "Numerical Methods",
+              "Introduction to AI",
+              "Data Mining & Machine Learning",
+              "High Performance Computing",
+              "Web Application Development",
+              "Cloud Computing",
             ],
           },
           {
-            label: "Math + foundations",
+            label: "Applied Mathematics I",
+            items: [
+              "Honors Multivariable Calculus",
+              "Ordinary Differential Equations",
+              "Vector Calculus",
+              "Partial Differential Equations & Systems",
+              "Elementary Linear Algebra",
+              "Linear Algebra II",
+            ],
+          },
+          {
+            label: "Applied Mathematics II",
             items: [
               "Discrete Mathematics",
-              "Linear Algebra",
+              "Introduction to Statistics",
               "Probability",
-              "Digital Logic Design",
+              "Abstract Algebra",
+              "Honors Real Analysis",
+              "Fourier Analysis",
+              "Methods for Complex Analysis",
             ],
           },
         ],
       },
       about: {
-        title: "About me",
+        title: "About Me",
         intro:
           "I'm a UC Santa Cruz Computer Engineering graduate and software engineer who likes building products that are technically sound, useful to real people, and clean in execution. My background spans production engineering, AI-focused work, full-stack systems, and fast-paced internship environments, with a consistent focus on shipping practical software under real constraints.",
         facts: [
@@ -384,7 +409,7 @@ export const siteContent = {
       summary: "Video moment search engine for jumping directly to the right second inside long-form content.",
       description:
         "ClipQuest is designed as a retrieval-first video product where users can search for a phrase, topic, or moment and land directly on the relevant section instead of manually scrubbing through an entire file. The project is centered on timestamp precision, useful indexing, and a smoother viewing flow that makes large video libraries feel searchable and structured.",
-      tech: ["React.js", "TypeScript", "Python", "FastAPI", "PostgreSQL", "FFmpeg"],
+      tech: ["React.js", "TypeScript", "Python", "FastAPI", "PostgreSQL", "Hugging Face", "Apache Kafka", "Vector Databases"],
       links: [
         {
           label: "GitHub Repo",
@@ -464,8 +489,8 @@ export const siteContent = {
     },
     {
       name: "GroupGrub",
-      icon: "◎",
-      association: "Personal Product Concept",
+      icon: "🍽",
+      association: "TreeHacks 2024",
       summary: "Group dining coordination app for helping friends decide where to eat with less back-and-forth.",
       description:
         "GroupGrub is a product concept focused on reducing the friction of choosing food with multiple people. The idea is to combine preferences, filters, location context, and lightweight voting into one decision flow so groups can land on a restaurant faster instead of getting stuck in long message threads. It is positioned as a consumer-facing app with clear room for stronger backend and recommendation logic.",
